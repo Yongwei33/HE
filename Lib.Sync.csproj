@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A03628C-1E74-4E88-B959-EBDAE887507F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Lib.Sync</RootNamespace>
+    <AssemblyName>Lib.Sync</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Group\Group.wsdl" />
+    <None Include="Web References\Group\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\SW_HR_FUNCTION.cs" />
+    <Compile Include="Model\SW_HR_JOBTITLE.cs" />
+    <Compile Include="Model\SW_HR_CONCURREN.cs" />
+    <Compile Include="Model\SW_HR_ACCOUNT.cs" />
+    <Compile Include="Model\SW_HR_DEPT.cs" />
+    <Compile Include="Model\TB_EB_EMPL_DEP.cs" />
+    <Compile Include="Model\TB_EB_EMPL_FUNC.cs" />
+    <Compile Include="Model\TB_EB_GROUP.cs" />
+    <Compile Include="Model\TB_EB_JOB_TITLE.cs" />
+    <Compile Include="Model\TB_EB_USER.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Sync\SyncPO.cs" />
+    <Compile Include="Sync\SyncTask.cs" />
+    <Compile Include="Sync\SyncUCO.cs" />
+    <Compile Include="Web References\Group\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\UOF\bin\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib">
+      <HintPath>..\UOF\bin\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.EIP.Organization">
+      <HintPath>..\UOF\bin\Ede.Uof.EIP.Organization.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.EIP.Organization.Util">
+      <HintPath>..\UOF\bin\Ede.Uof.EIP.Organization.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.EIP.PrivateMessage">
+      <HintPath>..\UOF\bin\Ede.Uof.EIP.PrivateMessage.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.Utility.Configuration">
+      <HintPath>..\UOF\bin\Ede.Uof.Utility.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.Utility.Data">
+      <HintPath>..\UOF\bin\Ede.Uof.Utility.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.Utility.Log">
+      <HintPath>..\UOF\bin\Ede.Uof.Utility.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.Utility.Message, Version=22.0.8050.27472, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UOF\bin\Ede.Uof.Utility.Message.dll</HintPath>
+    </Reference>
+    <Reference Include="Ede.Uof.Utility.Task">
+      <HintPath>..\UOF\bin\Ede.Uof.Utility.Task.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/UOF22/WebService/Group.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Group\</RelPath>
+      <UpdateFromURL>http://localhost/UOF22/WebService/Group.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Lib_Sync_Group_Group</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\Group\Group.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

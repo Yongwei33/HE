@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ClearAllCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearAllCacheResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearGroupCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearGroupCacheResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearDepartmentCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearDepartmentCacheResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ClearAllCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearAllCache" />
+  </wsdl:message>
+  <wsdl:message name="ClearAllCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearAllCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearGroupCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearGroupCache" />
+  </wsdl:message>
+  <wsdl:message name="ClearGroupCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearGroupCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearDepartmentCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearDepartmentCache" />
+  </wsdl:message>
+  <wsdl:message name="ClearDepartmentCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearDepartmentCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearAllCacheHttpGetIn" />
+  <wsdl:message name="ClearAllCacheHttpGetOut" />
+  <wsdl:message name="ClearGroupCacheHttpGetIn" />
+  <wsdl:message name="ClearGroupCacheHttpGetOut" />
+  <wsdl:message name="ClearDepartmentCacheHttpGetIn" />
+  <wsdl:message name="ClearDepartmentCacheHttpGetOut" />
+  <wsdl:message name="ClearAllCacheHttpPostIn" />
+  <wsdl:message name="ClearAllCacheHttpPostOut" />
+  <wsdl:message name="ClearGroupCacheHttpPostIn" />
+  <wsdl:message name="ClearGroupCacheHttpPostOut" />
+  <wsdl:message name="ClearDepartmentCacheHttpPostIn" />
+  <wsdl:message name="ClearDepartmentCacheHttpPostOut" />
+  <wsdl:portType name="GroupSoap">
+    <wsdl:operation name="ClearAllCache">
+      <wsdl:input message="tns:ClearAllCacheSoapIn" />
+      <wsdl:output message="tns:ClearAllCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearGroupCache">
+      <wsdl:input message="tns:ClearGroupCacheSoapIn" />
+      <wsdl:output message="tns:ClearGroupCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDepartmentCache">
+      <wsdl:input message="tns:ClearDepartmentCacheSoapIn" />
+      <wsdl:output message="tns:ClearDepartmentCacheSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GroupHttpGet">
+    <wsdl:operation name="ClearAllCache">
+      <wsdl:input message="tns:ClearAllCacheHttpGetIn" />
+      <wsdl:output message="tns:ClearAllCacheHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearGroupCache">
+      <wsdl:input message="tns:ClearGroupCacheHttpGetIn" />
+      <wsdl:output message="tns:ClearGroupCacheHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDepartmentCache">
+      <wsdl:input message="tns:ClearDepartmentCacheHttpGetIn" />
+      <wsdl:output message="tns:ClearDepartmentCacheHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="GroupHttpPost">
+    <wsdl:operation name="ClearAllCache">
+      <wsdl:input message="tns:ClearAllCacheHttpPostIn" />
+      <wsdl:output message="tns:ClearAllCacheHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearGroupCache">
+      <wsdl:input message="tns:ClearGroupCacheHttpPostIn" />
+      <wsdl:output message="tns:ClearGroupCacheHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDepartmentCache">
+      <wsdl:input message="tns:ClearDepartmentCacheHttpPostIn" />
+      <wsdl:output message="tns:ClearDepartmentCacheHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GroupSoap" type="tns:GroupSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ClearAllCache">
+      <soap:operation soapAction="http://tempuri.org/ClearAllCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearGroupCache">
+      <soap:operation soapAction="http://tempuri.org/ClearGroupCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearDepartmentCache">
+      <soap:operation soapAction="http://tempuri.org/ClearDepartmentCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GroupSoap12" type="tns:GroupSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ClearAllCache">
+      <soap12:operation soapAction="http://tempuri.org/ClearAllCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearGroupCache">
+      <soap12:operation soapAction="http://tempuri.org/ClearGroupCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearDepartmentCache">
+      <soap12:operation soapAction="http://tempuri.org/ClearDepartmentCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GroupHttpGet" type="tns:GroupHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ClearAllCache">
+      <http:operation location="/ClearAllCache" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ClearGroupCache">
+      <http:operation location="/ClearGroupCache" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDepartmentCache">
+      <http:operation location="/ClearDepartmentCache" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GroupHttpPost" type="tns:GroupHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ClearAllCache">
+      <http:operation location="/ClearAllCache" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ClearGroupCache">
+      <http:operation location="/ClearGroupCache" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDepartmentCache">
+      <http:operation location="/ClearDepartmentCache" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Group">
+    <wsdl:port name="GroupSoap" binding="tns:GroupSoap">
+      <soap:address location="http://localhost/UOF22/WebService/Group.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GroupSoap12" binding="tns:GroupSoap12">
+      <soap12:address location="http://localhost/UOF22/WebService/Group.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GroupHttpGet" binding="tns:GroupHttpGet">
+      <http:address location="http://localhost/UOF22/WebService/Group.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GroupHttpPost" binding="tns:GroupHttpPost">
+      <http:address location="http://localhost/UOF22/WebService/Group.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
